@@ -33,9 +33,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
             MoveTowardsPlayer();
         }
     }
-    
 
 
+
+    //the procedure that lets the enemy move to the player
     private void MoveTowardsPlayer()
     {
         Vector3 direction = (player.transform.position - transform.position).normalized;
