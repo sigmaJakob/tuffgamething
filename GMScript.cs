@@ -12,6 +12,7 @@ public class GMScript : MonoBehaviour
     public List<Vector3> gemPosList;
     public List<Vector3> gemPosList2;
     public int score;
+    public Vector3 despicable;
     public GameObject Player;
 
     public float timer;
@@ -33,8 +34,10 @@ public class GMScript : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 2)
         {
-            Debug.Log("2 Second Timer");
+            Debug.Log("A gem has spawned!");
             timer = 0;
+            despicable = new Vector3(Random.Range(-33, 31), Random.Range(-25, 25), 0);
+            Instantiate(gemPrefab, despicable, Quaternion.identity);
         }
 
         if (score >= 10)

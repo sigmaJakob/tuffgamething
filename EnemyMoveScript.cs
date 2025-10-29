@@ -14,6 +14,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float damageAmount = 10f;
 
 
+     public float timer;
+
 
 
     private void Start()
@@ -32,6 +34,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             MoveTowardsPlayer();
         }
+
+        timer += Time.deltaTime;
+        if (timer >= 2)
+        {
+            timer = 0;
+            moveSpeed += 1;
+            Debug.Log("Speeding Up");
+        }
+
     }
 
 
